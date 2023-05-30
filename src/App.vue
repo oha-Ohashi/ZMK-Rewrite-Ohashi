@@ -84,6 +84,9 @@ const viewFileContent = (): void => {
 <template>
   <div class="container-fluid">
     <h1>ZMK Rewrite Ohashi</h1>
+    <a href="https://github.com/oha-Ohashi/ZMK-Rewrite-Ohashi">GitHub repository</a>
+    &ensp;
+    <a href="https://oha-ohashi.github.io/">works in the past</a>
     <div class="mt-4">
     <LoadSave @load="updateFileContent" @save="saveFileContent" @view="viewFileContent"/>
     </div>
@@ -104,6 +107,13 @@ const viewFileContent = (): void => {
     <Keymap :keymap-core="keymapCore" :file-content="fileContent" @update-key="updateKeyToCore"/>
     </div>
   </div>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">Copyright (c) 2023 oha-Ohashi</span>
+      &ensp;
+      <a href="https://github.com/oha-Ohashi/ZMK-Rewrite-Ohashi">GitHub repository</a>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
