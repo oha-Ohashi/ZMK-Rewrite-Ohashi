@@ -1,0 +1,74 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define NUMBER   1
+#define SIGN   2
+#define SWITCH 3
+#define WASD 4
+#define RIGHTHAND 5
+#define GAME 6
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp TAB &lt SIGN MINUS &kp W &kp Y &kp B &kp ESC &kp G &kp M &kp D &kp F &kp BSPC
+                &kp LSHIFT &kp O &kp I &kp E &kp A &kp U &kp R &kp T &kp K &kp N &kp S
+                &kp LCTRL &kp Z &kp X &kp C &kp V &kp Q &none &kp H &kp J &kp L &kp P
+                &kp LALT &mo WASD &lt NUMBER LANG2 &mt LSHIFT SPC &mo SWITCH &kp LGUI &kp ENTER &lt SIGN LANG1 &mo RIGHTHAND &mo SWITCH>;
+        };
+
+        number_layer {
+            bindings = <
+                &kp F12 &kp EXCLAMATION &kp AT_SIGN &kp HASH &kp DOLLAR &kp PERCENT &kp CARET &kp PLUS &kp MINUS &kp ASTERISK &kp SLASH
+                &kp F11 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
+                &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+                &trans &kp LC(LG(LEFT)) &trans &kp LC(LG(RIGHT)) &trans &trans &kp COMMA &kp PERIOD &kp Q &trans>;
+        };
+
+        sign_layer {
+            bindings = <
+                &kp PAGE_UP &trans &kp BSPC &kp UP &kp DEL &kp ENTER &kp GRAVE &kp SINGLE_QUOTE &kp DOUBLE_QUOTES &trans &kp BACKSLASH
+                &kp PAGE_DOWN &kp HOME &kp LEFT &kp DOWN &kp RIGHT &kp END &kp TILDE &kp MINUS &kp UNDERSCORE &kp EQUAL &trans
+                &trans &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_BRACKET &kp RIGHT_BRACKET &trans &trans &kp LEFT_BRACE &kp RIGHT_BRACE &kp LESS_THAN &kp GREATER_THAN
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>;
+        };
+
+        switch_layer {
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &bt BT_SEL 4 &trans &trans &trans &kp C_VOL_UP
+                &trans &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5) &bt BT_SEL 3 &trans &kp TAB &kp LALT &kp C_VOL_DN
+                &trans &trans &trans &trans &trans &trans &bt BT_CLR &out OUT_BLE &out OUT_USB &bt BT_SEL 1 &bt BT_SEL 2
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans>;
+        };
+
+        wasd_layer {
+            bindings = <
+                &kp LSFT &kp W &kp W &kp E &kp R &kp T &trans &kp F7 &kp F8 &kp F9 &trans
+                &kp LCTL &kp Z &kp S &kp E &kp SPC &trans &trans &kp F4 &kp F5 &kp F6 &trans
+                &trans &trans &kp X &kp C &kp V &trans &trans &kp F1 &kp F2 &kp F3 &trans
+                &trans &trans &trans &trans &trans &trans &trans &kp LSHIFT &kp RSHIFT &trans>;
+        };
+        
+        right_layer {
+            bindings = <
+                &trans &kp EXCLAMATION &kp QUESTION &trans &trans &trans &kp R &kp E &kp W &kp Q &kp RSHIFT
+                &trans &kp AMPERSAND &kp PIPE &trans &trans &trans &kp SPC &kp A &kp S &kp D &kp RCTL
+                &trans &kp SEMICOLON &kp COLON &trans &reset &bootloader &kp V &kp C &kp X &kp Z &kp TAB
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &to GAME>;
+        };
+
+        game_layer {
+            bindings = <
+                &kp LSFT &kp D &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P
+                &kp LCTL &kp Q &kp S &kp A &kp F &kp G &kp H &kp J &kp K &kp L &none
+                &kp TAB &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &none &none &none
+                &trans &kp LALT &mo NUMBER &kp SPC &trans &trans &trans &trans &to DEFAULT &trans>;
+        };
+    };
+};
