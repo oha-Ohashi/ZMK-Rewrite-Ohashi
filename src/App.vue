@@ -84,6 +84,8 @@ const viewFileContent = (): void => {
 <template>
   <div class="container-fluid">
     <h1>ZMK Rewrite Ohashi</h1>
+    <a href="https://github.com/oha-Ohashi/ZMK-Rewrite-Ohashi/blob/main/public/sample.keymap">sample keymap</a>
+    &ensp;
     <a href="https://github.com/oha-Ohashi/ZMK-Rewrite-Ohashi">GitHub repository</a>
     &ensp;
     <a href="https://oha-ohashi.github.io/">works in the past</a>
