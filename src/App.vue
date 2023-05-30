@@ -83,7 +83,7 @@ const viewFileContent = (): void => {
 
 <template>
   <div class="container-fluid">
-    <h1>GMK Rewrite Ohashi</h1>
+    <h1>ZMK Rewrite Ohashi</h1>
     <div class="mt-4">
     <LoadSave @load="updateFileContent" @save="saveFileContent" @view="viewFileContent"/>
     </div>

@@ -1,4 +1,4 @@
-# GMK Rewrite Ohashi
+# ZMK Rewrite Ohashi
 
 upload your `<keybord>.keymap`, modify it, and download it!!
 
